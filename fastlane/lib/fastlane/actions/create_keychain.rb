@@ -35,6 +35,8 @@ module Fastlane
 
         keychain_path = resolved_keychain_path(keychain_path)
 
+        UI.important("New keychain path: #{keychain_path}")
+
         Actions.lane_context[Actions::SharedValues::KEYCHAIN_PATH] = keychain_path
 
         if params[:default_keychain]
