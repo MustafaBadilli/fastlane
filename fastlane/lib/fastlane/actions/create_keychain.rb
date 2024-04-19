@@ -33,6 +33,8 @@ module Fastlane
           UI.important("If creating a new Keychain DB is required please set the `require_create` option true to cause the action to fail")
         end
 
+        keychain_path = resolved_keychain_path(keychain_path)
+
         Actions.lane_context[Actions::SharedValues::KEYCHAIN_PATH] = keychain_path
 
         if params[:default_keychain]
