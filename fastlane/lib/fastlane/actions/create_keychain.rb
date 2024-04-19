@@ -45,7 +45,7 @@ module Fastlane
             Actions.lane_context[Actions::SharedValues::ORIGINAL_DEFAULT_KEYCHAIN] = Fastlane::Actions.sh("security default-keychain", log: false).strip
           rescue
           end
-          commands << Fastlane::Actions.sh("security default-keychain -s #{keychain_path}", log: false)
+          commands << Fastlane::Actions.sh("security default-keychain -s #{keychain_path}", log: true)
         end
 
         commands << Fastlane::Actions.sh("security unlock-keychain -p #{escaped_password} #{keychain_path}", log: false) if params[:unlock]
